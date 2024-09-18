@@ -10,19 +10,6 @@ const total = document.getElementById("total");
 
 let students=[];
 
-//Object
-let school={
-    name:"FCITEC",
-    address:{
-        street:"No name",
-        number:"333"
-    },
-    hour:{
-        open:"8:00 am",
-        close:"4:00 pm"
-    }
-}
-
 //Object Constructor
 function Student(name,age,gender,g1,g2,g3){
     this.name = name;
@@ -42,11 +29,16 @@ function Student(name,age,gender,g1,g2,g3){
 }
 
 function register(){
-    let newStudent = new Student(inputName.value,inputAge.value,inputGender.value,inputG1.value,inputG2.value,inputG3.value);
-    students.push(newStudent);  
-    console.log(newStudent);
-    displayTotals();
-    displayRow();
+    if (noEmpty()) {
+        let newStudent = new Student(inputName.value,inputAge.value,inputGender.value,inputG1.value,inputG2.value,inputG3.value);
+        students.push(newStudent);  
+        console.log(newStudent);
+        displayTotals();
+        displayRow();
+    }
+    else{
+        alert("Fill all the info");
+    }
 }
 
 function init(){
@@ -58,5 +50,17 @@ function init(){
     displayRow();
 }
 
+function noEmpty(){
+    let info = [inputName.value,inputAge.value,inputGender.value,inputG1.value,inputG2.value,inputG3.value];
+
+    for (let i = 0; i < info.length; i++) {
+        let tmp = info[i];
+        if (!tmp.trim()) {
+           return false; 
+        }
+    }
+
+    return true;
+}
 
 window.onload=init; //Wait to render o charge the elements in the HTML
