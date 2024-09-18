@@ -1,0 +1,11 @@
+#total{
+    display: inline-block;
+    color: white;
+    background-color: red;
+    font-size: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+
+}
