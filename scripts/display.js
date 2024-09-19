@@ -15,7 +15,11 @@ function displayRow(){
                 <td>${student.g2}</td>
                 <td>${student.g3}</td>
                 <td>${student.gpa()}</td>
-                <td><button onclick=removeElement(${i})>Delete</button></td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger" onclick=removeElement(${i})>
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                </td>
             </tr>
         `;
     }
@@ -30,4 +34,5 @@ function removeElement(id){
     students.splice(id,1);
 
     displayRow();
+    displayTotals();
 }

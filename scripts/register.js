@@ -16,7 +16,7 @@ function Student(name,age,gender,email,g1,g2,g3){
     this.name = name;
     this.age = age;
     this.gender = gender;
-    this.email = email;
+    this.email = email+"@uabc.edu.mx";
     this.g1 = g1;
     this.g2 = g2;
     this.g3 = g3;
@@ -46,10 +46,11 @@ function register(){
 function init(){
     registerBtn.addEventListener('click',register);
 
-    let student1 = new Student("Test",23,"Male","test1@uabc.edu.mx",87,88,89);
-    let student2 = new Student("Test 2",24,"Male","test2@uabc.edu.mx",86,90,92);
+    let student1 = new Student("Test",23,"Male","test1",87,88,89);
+    let student2 = new Student("Test 2",24,"Male","test2",86,90,92);
     students.push(student1,student2);
     displayRow();
+    displayTotals();
 }
 
 //Function for validate the inputs are not empty
