@@ -36,7 +36,6 @@ function register(){
     if (noEmpty()) {
         let newStudent = new Student(inputName.value,inputAge.value,inputGender.value,inputEmail.value,inputG1.value,inputG2.value,inputG3.value);
         students.push(newStudent);  
-        console.log(newStudent);
         displayTotals();
         displayRow();
     }
