@@ -1,3 +1,4 @@
+//Here the program creates a new row for each student in the list
 function displayRow(){
     const Table = document.getElementById("studentList");
     let row="";
@@ -26,10 +27,12 @@ function displayRow(){
     Table.innerHTML=row;
 }
 
+//This function displays the total students that are registered on the web
 function displayTotals(){
     document.getElementById('total').innerHTML=students.length;
 }
 
+//This function receives student id that will be remove from the registry
 function removeElement(id){
     students.splice(id,1);
 

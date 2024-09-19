@@ -8,7 +8,7 @@ const inputG3 = document.getElementById("txtGrade3");
 const registerBtn = document.getElementById("btnRegister");
 const total = document.getElementById("total");
 
-
+//List, here the program stores the new students
 let students=[];
 
 //Object Constructor
@@ -16,6 +16,7 @@ function Student(name,age,gender,email,g1,g2,g3){
     this.name = name;
     this.age = age;
     this.gender = gender;
+    //They only need put the user, the email will autocomplete
     this.email = email+"@uabc.edu.mx";
     this.g1 = g1;
     this.g2 = g2;
@@ -30,6 +31,7 @@ function Student(name,age,gender,email,g1,g2,g3){
     }
 }
 
+//This function take the information from the inputs and create a new student
 function register(){
     if (noEmpty()) {
         let newStudent = new Student(inputName.value,inputAge.value,inputGender.value,inputEmail.value,inputG1.value,inputG2.value,inputG3.value);
@@ -51,22 +53,6 @@ function init(){
     students.push(student1,student2);
     displayRow();
     displayTotals();
-}
-
-//Function for validate the inputs are not empty
-function noEmpty(){
-    //Create a list that contain all the info from the inputs
-    let info = [inputName.value,inputAge.value,inputGender.value,inputEmail.value,inputG1.value,inputG2.value,inputG3.value];
-
-    //With a for, we iterate in the list and apply the trim function, if the input is empty the function return a false
-    for (let i = 0; i < info.length; i++) {
-        let tmp = info[i];
-        if (!tmp.trim()) {
-           return false; 
-        }
-    }
-    //If iterate all the list and no value is empty, we return a true
-    return true;
 }
 
 window.onload=init; //Wait to render o charge the elements in the HTML
