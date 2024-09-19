@@ -1,5 +1,3 @@
-var remove =""
-
 function displayRow(){
     const Table = document.getElementById("studentList");
     let row="";
@@ -8,9 +6,11 @@ function displayRow(){
         let student = students[i];
         row+=`
             <tr>
+                <td>${i+1}</td>
                 <td>${student.name}</td>
                 <td>${student.age}</td>
                 <td>${student.gender}</td>
+                <td>${student.email}</td>
                 <td>${student.g1}</td>
                 <td>${student.g2}</td>
                 <td>${student.g3}</td>
